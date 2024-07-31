@@ -24,5 +24,9 @@ class PokemonViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .red
+
+        viewModel?.getPokemonList()
+        
+        
     }
 }

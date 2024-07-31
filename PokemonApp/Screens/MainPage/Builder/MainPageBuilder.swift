@@ -12,7 +12,9 @@ enum MainPageBuilder {
     
     static func build(appCoordinator: AppCoordinator) -> PokemonViewController {
         
-        let viewModel = PokemonViewModel(appCoordinator: appCoordinator)
+        let httpClient = HttpClient(alamofireSession: Alamofire.Session.default)
+        
+        let viewModel = PokemonViewModel(httpClient: httpClient, appCoordinator: appCoordinator)
                 
                 let viewController = PokemonViewController(viewModel: viewModel)
                 

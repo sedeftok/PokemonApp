@@ -18,4 +18,5 @@ extension Constants {
     static func generatePokemonURL() -> URL? {
             URL(string: BASE_URL + QUERY_URL)
         }
+    
 }
