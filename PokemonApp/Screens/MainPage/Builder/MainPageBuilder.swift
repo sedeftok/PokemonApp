@@ -14,10 +14,14 @@ enum MainPageBuilder {
         
         let httpClient = HttpClient(alamofireSession: Alamofire.Session.default)
         
-        let viewModel = PokemonViewModel(httpClient: httpClient, appCoordinator: appCoordinator)
+        let viewModel = MainPageViewModel(httpClient: httpClient, appCoordinator: appCoordinator)
+        
+        let delegate = MainPageDelegate()
+        let dataSource = MainPageDataSource()
                 
-                let viewController = PokemonViewController(viewModel: viewModel)
+        let viewController = PokemonViewController(viewModel: viewModel, delegate: delegate,
+                                                   dataSource: dataSource)
                 
-                return viewController
+        return viewController
     }
 }

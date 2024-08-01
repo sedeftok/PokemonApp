@@ -22,7 +22,7 @@ protocol PokemonViewModelProtocol {
     func getPokemonList()
 }
 
-final class PokemonViewModel {
+final class MainPageViewModel {
     
     weak var output: PokemonViewModelOutput?
     private var appCoordinator: AppCoordinator?

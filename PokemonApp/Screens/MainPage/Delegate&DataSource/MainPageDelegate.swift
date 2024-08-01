@@ -6,3 +6,22 @@
 //
 
 import Foundation
+import UIKit
+
+final class MainPageDelegate: NSObject {
+    
+    // private var viewModel: MainPageCellViewModel?
+}
+
+extension MainPageDelegate: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            
+            if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+                let size = CellSize(flowLayout: flowLayout,
+                                    width: UIScreen.main.bounds.size.width)
+                return size.estimatedItemSize
+            }
+            return .zero
+        }
+}
