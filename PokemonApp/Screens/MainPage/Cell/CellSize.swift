@@ -12,7 +12,7 @@ struct CellSize { // hücre içi düzen
     
         private enum Constant {
                static let contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-               static let collectionViewEstimatedCellHeight: CGFloat = 150
+               static let collectionViewEstimatedCellHeight: CGFloat = 200
                static let minimumLineSpacing: CGFloat = 16.0
                static let minimumInteritemSpacing: CGFloat = 16.0
                static let zero: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 0)
@@ -43,6 +43,7 @@ struct CellSize { // hücre içi düzen
        init(flowLayout: UICollectionViewFlowLayout, width: CGFloat) {
         self.flowLayout = flowLayout
         self.width = width
+           
         setSpacing()
             }
     

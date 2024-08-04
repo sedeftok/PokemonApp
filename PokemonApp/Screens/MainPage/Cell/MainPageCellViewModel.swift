@@ -9,13 +9,23 @@ import Foundation
 
 class MainPageCellViewModel {
     
-    private var result: [Pokemon]
+    private var result: [Results]
     
-    init(result: [Pokemon]) {
+    init(result: [Results]) {
         self.result = result
     }
     
     var listCount: Int {
         result.count
     }
+    
+    func getImage(by indexPath: IndexPath) -> URL {
+        let url = URL(string: result[indexPath.row].url ?? "")
+        return url ?? Constants.emptyImageURL
+    }
+    
+    func getName(by indexPath: IndexPath) -> String {
+        result[indexPath.row].name ?? ""
+    }
+    
 }

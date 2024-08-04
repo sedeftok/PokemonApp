@@ -8,12 +8,12 @@
 import Foundation
 
 enum PokemonListViewModelState {
-    case showPokemonList([Results])
+    case showPokemonList(MainPageCellViewModel)
     case showError(String)
 }
 
 protocol PokemonViewModelOutput: AnyObject {
-    func updateView(_ state: PokemonListViewModelState)
+    func updateView(state: PokemonListViewModelState)
 }
 
 protocol PokemonViewModelProtocol {
@@ -29,11 +29,13 @@ final class MainPageViewModel {
     private var httpClient: HttpClientProtocol?
     
     init(httpClient: HttpClientProtocol, appCoordinator: AppCoordinator) {
-            self.httpClient = httpClient
-            self.appCoordinator = appCoordinator
-        }
+        self.httpClient = httpClient
+        self.appCoordinator = appCoordinator
+    }
     
     func getPokemonList() {
+    
+        
         httpClient?.fetch(url: Constants.generatePokemonURL()!, completion: {(result: Result<Pokemon, Error>) in
             
             switch result {
@@ -41,10 +43,13 @@ final class MainPageViewModel {
                 guard let results = response.results else { return print ("error")
                 }
                 print (results)
-    
+                let cellViewModel = MainPageCellViewModel(result: results)
+                self.output?.updateView(state: .showPokemonList(cellViewModel))
             case .failure(let error):
-                  return print(error.localizedDescription)
-                        }
+                return print(error.localizedDescription)
+            }
         })
+        
+        
     }
 }

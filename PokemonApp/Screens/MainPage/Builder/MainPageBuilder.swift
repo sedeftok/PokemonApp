@@ -18,10 +18,10 @@ enum MainPageBuilder {
         
         let delegate = MainPageDelegate()
         let dataSource = MainPageDataSource()
-                
+        
         let viewController = PokemonViewController(viewModel: viewModel, delegate: delegate,
                                                    dataSource: dataSource)
-                
+        
         return viewController
     }
 }

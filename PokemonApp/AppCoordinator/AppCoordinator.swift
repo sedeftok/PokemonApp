@@ -23,6 +23,6 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let vc = MainPageBuilder.build(appCoordinator: self)
-               navigationController?.pushViewController(vc, animated: false)
+        navigationController?.pushViewController(vc, animated: false)
     }
 }

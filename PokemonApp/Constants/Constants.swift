@@ -11,6 +11,8 @@ struct Constants {
     
     static let BASE_URL = "https://pokeapi.co/api/v2"
     static let QUERY_URL = "/pokemon"
+    
+    static let emptyImageURL: URL = URL(string: "https://www.swift-inc.com/public/images/images-empty.png")!
 }
 
 extension Constants {

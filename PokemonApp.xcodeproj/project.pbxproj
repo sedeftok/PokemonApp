@@ -94,7 +94,6 @@
 				3945669F2C5785A100658766 /* Constants */,
 				394566A02C5785B300658766 /* Extensions */,
 				394566A12C5785BD00658766 /* Network */,
-				394566A22C57862800658766 /* Resources */,
 				394566A32C5786B300658766 /* Screens */,
 			);
 			path = PokemonApp;
@@ -142,13 +141,6 @@
 				394566A52C57890200658766 /* Services */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		394566A22C57862800658766 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		394566A32C5786B300658766 /* Screens */ = {
